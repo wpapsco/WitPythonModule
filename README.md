@@ -1,9 +1,11 @@
-WitPythonModule
-===============
+Wit Python Module
+=================
 
 A python module for the wit.ai natural speech processing service.
 
 Just copy the wit folder into your ```Python27/Lib``` folder.
+
+You must also have the ```requests``` module installed.
 
 Example
 =======
