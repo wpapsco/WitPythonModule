@@ -18,14 +18,17 @@ def query(query):
 		raise Exception('Invalid key. Set the key by doing wit.key = XXXX')
  
 def queryAudio(filename):
-	wav_file = open(filename, 'rb')
-	headers = {'Authorization': 'Bearer ' + key, 'Content-Type': 'audio/wav'}
-	url =  'https://api.wit.ai/speech'
-	data = wav_file
-	text = requests.post(url, headers = headers, data = data).text
-	try:
-		j = json.loads(text)
-	except ValueError:
-		j = {'error':text}
-	wav_file.close()
-	return j
+	if len(key) > 0:
+		wav_file = open(filename, 'rb')
+		headers = {'Authorization': 'Bearer ' + key, 'Content-Type': 'audio/wav'}
+		url =  'https://api.wit.ai/speech'
+		data = wav_file
+		text = requests.post(url, headers = headers, data = data).text
+		try:
+			j = json.loads(text)
+		except ValueError:
+			j = {'error':text}
+		wav_file.close()
+		return j
+	else:
+		raise Exception('Invalid key. Set the key by doing wit.key = XXXX')
