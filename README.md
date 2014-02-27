@@ -11,7 +11,7 @@ Example
 =======
 
 ```python
-wit.key = XXXXYOURKEYHEREXXXX
+wit.key = 'XXXXYOURKEYHEREXXXX'
 result = wit.query('hello wit!')
 if result['outcome']['intent'] == 'greeting':
   print(result['outcome']['entities'])
