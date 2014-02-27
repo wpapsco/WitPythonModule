@@ -3,7 +3,7 @@ WitPythonModule
 
 A python module for the wit.ai natural speech processing service.
 
-Just copy the wit folder into your Python27/Lib folder.
+Just copy the wit folder into your ```Python27/Lib``` folder.
 
 Example
 =======
