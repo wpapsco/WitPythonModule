@@ -13,4 +13,9 @@ wit.key = XXXXYOURKEYHEREXXXX
 result = wit.query('hello wit!')
 if result['outcome']['intent'] == 'greeting':
   print(result['outcome']['entities'])
+  
+result = wit.queryAudio('hello.wav') #only accepts .wav files
+if result['outcome']['intent'] == 'greeting':
+  print(result['msg_body']) #prints what was said in the audio file
+  print(result['outcome']['intent']['entities'])
 ```
